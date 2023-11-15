@@ -1,0 +1,24 @@
+{
+  "name": "projectmanagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baharSaeedi/project-manegement.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baharSaeedi/project-manegement/issues"
+  },
+  "homepage": "https://github.com/baharSaeedi/project-manegement#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
