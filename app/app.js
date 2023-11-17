@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const http = require("http");
 const path = require("path");
+const { appRoutes } = require("./router/router");
 
 module.exports = class Application {
   #app = express();
@@ -44,5 +45,6 @@ module.exports = class Application {
         message: "hi",
       });
     });
+    this.#app.use(appRoutes);
   }
 };
