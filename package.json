@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/baharSaeedi/project-manegement#readme",
   "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1",
     "nodemon": "^3.0.1"
   }
 }
