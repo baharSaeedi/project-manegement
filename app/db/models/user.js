@@ -7,7 +7,7 @@ const UserModel = new Schema(
     userName: { type: String, required: true, uniqe: true },
     password: { type: String },
     mobile: { type: String, required: true, unique: true },
-    roles: { type: String, default: ["USER"] },
+    roles: { type: String, default: "USER" },
     email: { type: String, required: true, unique: true },
     skills: { type: Array, default: [] },
     teams: { type: Array, default: [] },

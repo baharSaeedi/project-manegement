@@ -46,5 +46,12 @@ module.exports = class Application {
       });
     });
     this.#app.use(appRoutes);
+    // this.#app.use((error, req, res, next) => {
+    //   try {
+
+    //   } catch (error) {
+    //     next(error);
+    //   }
+    // });
   }
 };
