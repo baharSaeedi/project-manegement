@@ -19,8 +19,15 @@ function jwtTokenGenerator(payload) {
   return token;
 }
 
+function jwtTokenVerifier(token) {
+  const verify = jwt.verify(token, process.env.SECRET_JWT);
+  if (!verify?.userId) throw { status: 401, message: "UnAthorized!" };
+  return verify;
+}
+
 module.exports = {
   hashString,
   checkHashString,
   jwtTokenGenerator,
+  jwtTokenVerifier,
 };
