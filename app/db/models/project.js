@@ -8,10 +8,6 @@ const ProjectModel = new Schema(
     team: { type: Types.ObjectId },
     owner: { type: Types.ObjectId, required: true },
     show: { type: Boolean, default: true },
-    roles: { type: String, default: ["USER"] },
-    email: { type: String, required: true, unique: true },
-    skills: { type: Array, default: [] },
-    teams: { type: Array, default: [] },
   },
   {
     timestamps: true,
