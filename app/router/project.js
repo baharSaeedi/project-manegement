@@ -1,7 +1,10 @@
 const { Router } = require("express");
 const { checkAuth } = require("../http/middlewares/checkAuth");
 const { ProjectController } = require("../http/controllers/project.controller");
-const { createProjectValidator } = require("../http/validations/project");
+const {
+  createProjectValidator,
+  mongoIdValidator,
+} = require("../http/validations/project");
 const { validate } = require("../http/middlewares/validate");
 
 const router = Router();
@@ -23,12 +26,16 @@ router.get(
 router.get(
   "/getProjectById/:id",
   checkAuth,
+  mongoIdValidator(),
+  validate,
   ProjectController.getListOfProjectByOwnerAndId
 );
 
 router.delete(
   "/deleteOwnerProjectById/:id",
   checkAuth,
+  mongoIdValidator(),
+  validate,
   ProjectController.deleteProjectByOwnerAndId
 );
 
