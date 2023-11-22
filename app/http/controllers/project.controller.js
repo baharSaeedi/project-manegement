@@ -18,7 +18,7 @@ class Project {
   async getListOfProjectByOwner(req, res, next) {
     try {
       const owner = req.user.userId;
-      const projects = await projectModel.find({ owner });
+      const projects = await projectModel.find({ owner }, { _id: 0 });
       return res.status(200).json({
         status: 200,
         projects: projects,
