@@ -15,6 +15,18 @@ class Project {
       next(error);
     }
   }
+  async getListOfProjectByOwner(req, res, next) {
+    try {
+      const owner = req.user.userId;
+      const projects = await projectModel.find({ owner });
+      return res.status(200).json({
+        status: 200,
+        projects: projects,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = {
