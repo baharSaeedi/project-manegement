@@ -33,10 +33,11 @@ class Project {
     try {
       const owner = req.user.userId;
       const id = req.params.id;
-      const project = await projectModel.find(
+      const project = await projectModel.findOne(
         { owner: owner, _id: id },
         { _id: 0 }
       );
+      if (project === null) throw { status: 404, message: "project not exist" };
       return res.status(200).json({
         status: 200,
         projects: project,
