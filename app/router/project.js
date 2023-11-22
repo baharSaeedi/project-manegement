@@ -14,6 +14,12 @@ router.post(
   ProjectController.createProject
 );
 
+router.get(
+  "/getListOfProject",
+  checkAuth,
+  ProjectController.getListOfProjectByOwner
+);
+
 module.exports = {
   projectRoutes: router,
 };
