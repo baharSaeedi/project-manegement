@@ -8,6 +8,7 @@ const ProjectModel = new Schema(
     team: { type: Types.ObjectId },
     owner: { type: Types.ObjectId, required: true },
     show: { type: Boolean, default: true },
+    tags: { type: [String], default: [] },
   },
   {
     timestamps: true,
