@@ -20,6 +20,12 @@ router.get(
   ProjectController.getListOfProjectByOwner
 );
 
+router.get(
+  "/getListOfProjectById/:id",
+  checkAuth,
+  ProjectController.getListOfProjectByOwnerAndId
+);
+
 module.exports = {
   projectRoutes: router,
 };
