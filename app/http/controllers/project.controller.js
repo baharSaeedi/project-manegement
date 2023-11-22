@@ -45,6 +45,20 @@ class Project {
       next(error);
     }
   }
+
+  async deleteProjectByOwnerAndId(req, res, next) {
+    try {
+      const owner = req.user.userId;
+      const id = req.params.id;
+      const project = await projectModel.deleteOne({ owner: owner, _id: id });
+      return res.status(200).json({
+        status: 200,
+        message: "project deleted",
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = {

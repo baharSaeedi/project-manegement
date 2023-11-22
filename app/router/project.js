@@ -21,9 +21,15 @@ router.get(
 );
 
 router.get(
-  "/getListOfProjectById/:id",
+  "/getProjectById/:id",
   checkAuth,
   ProjectController.getListOfProjectByOwnerAndId
+);
+
+router.delete(
+  "/deleteOwnerProjectById/:id",
+  checkAuth,
+  ProjectController.deleteProjectByOwnerAndId
 );
 
 module.exports = {
